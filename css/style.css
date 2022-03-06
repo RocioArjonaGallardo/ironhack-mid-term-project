@@ -1,9 +1,74 @@
+/* RESET https://www.super-simple.net/blog/un-css-reset-moderno/ */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default padding */
+ul[class],
+ol[class] {
+  padding: 0;
+}
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+ul[class],
+ol[class],
+li,
+figure,
+figcaption,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  scroll-behavior: smooth;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+/* Remove list styles on ul, ol elements with a class attribute */
+ul[class],
+ol[class] {
+  list-style: none;
+}
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+/* Make images easier to work with */
+img {
+  max-width: 100%;
+  display: block;
+}
+/* Natural flow and rhythm in articles by default */
+article > * + * {
+  margin-top: 1em;
+}
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* CSS START HERE */
 * {
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
+
 /* COLOR */
 * {
   /* other colors */
@@ -27,6 +92,7 @@
   --yellow1: #ffc600;
   --yellow2: #fce300;
 }
+
 /* Text styles*/
 h1 {
   font-family: "Roboto", sans-serif;
@@ -35,6 +101,7 @@ h1 {
   font-size: 60px;
   line-height: 70px;
   color: #000000;
+  margin-top: 1.2rem;
 }
 
 h2 {
@@ -62,8 +129,6 @@ h4 {
   line-height: 28px;
   color: #072ac8;
 }
-
-/* BODY */
 p .medium {
   font-family: "Roboto", sans-serif;
   font-style: Medium;
@@ -73,35 +138,25 @@ p .medium {
   color: #000000;
 }
 
-p .regular {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 150%;
-  color: #000000;
+/* BODY */
+.body {
+  background-color: #f2f4fc;
+  height: 100%;
 }
 
-/* HEADLINE */
-p .headline {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 150%;
-  color: #000000;
+.hero-section {
+  margin: 4.5rem;
 }
-/* HEADER */
 
-header {
-  padding: 1rem;
-  margin: 1rem;
-}
 /*  NAVIGATION BAR */
 
 .top-menu {
-  padding: 1rem;
-  margin: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-flow: wrap;
+  justify-content: space-around;
+  padding: auto;
+  margin: auto;
 }
 .logo-circle {
   padding: 1rem;
@@ -110,190 +165,123 @@ header {
 .nav-bar {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  text-decoration: none;
+  flex-flow: wrap;
+  justify-content: space-around;
 }
-.contact-btn {
+.nav-bar a {
+  text-decoration: none;
+  padding: 1rem;
+  margin: 1rem;
+  color: #6b708d;
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: left;
+}
+
+.primary-btn {
   font-family: "Roboto", sans-serif;
   background-color: #072ac8;
-  color: #ecf7ff;
-  padding: 1rem;
-  margin: 1rem;
-}
-
-/* Caption/1 */
-p .caption1 {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 18px;
-  color: #000000;
-}
-/* Caption/2 */
-
-p .caption2 {
-  font-family: "Roboto", sans-serif;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  color: #000000;
-}
-
-/* OLD */
-
-* {
-  margin: 0px;
-  padding: 0px;
-  box-sizing: border-box;
-  font-family: "Roboto", sans-serif;
-  background-color: #a15f5f;
-  display: flex;
-}
-/* COLOR */
-* {
-  /* other colors */
-  --placeholder-color: #6e6e6e;
-  --text-grey: #514d67;
-  --accent: #43d2ff;
-  --bg-color: #e5e5e5;
-
-  /* primary */
-  --default: #072ac8;
-  --hover: #a2d6f9;
-  --tapped: #d1edff;
-
-  /* neutral*/
-  --dark: #292e47;
-  --medium: #6b708d;
-  --light: #f2f4fc;
-  --light-blue: #ecf7ff;
-
-  /* Secondary */
-  --yellow1: #ffc600;
-  --yellow2: #fce300;
-}
-/* Text styles*/
-h1 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 60px;
-  line-height: 70px;
-  color: #000000;
-}
-
-h2 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 50px;
-  line-height: 59px;
-  /* identical to box height */
-  color: #000000;
-}
-h3 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 47px;
-  /* identical to box height */
-  color: #000000;
-}
-
-h4 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: bold;
-  font-size: 24px;
-  line-height: 28px;
-  color: #072ac8;
-}
-
-/* BODY */
-p .medium {
-  font-family: Roboto;
-  font-style: Medium;
-  font-size: 24px;
-  line-height: 28.13px;
-  line-height: 100%;
-  color: #000000;
-}
-
-p .regular {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 20px;
-  line-height: 150%;
-  color: #000000;
-}
-
-/* HEADLINE */
-p .headline {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 17px;
-  line-height: 150%;
-  /* identical to box height, or 26px */
-
-  color: #000000;
-}
-/* HEADER */
-
-header {
-  padding: 1rem;
-  margin: 1rem;
-}
-/*  NAVIGATION BAR */
-
-.top-menu {
-  padding: 1rem;
-  margin: 1rem;
-}
-.logo-circle {
-  padding: 1rem;
-  margin: 1rem;
-}
-.nav-bar {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  align-items: flex-end;
-}
-
-.nav-bar a:link {
-  color: var(--medium);
-  text-decoration: none;
-  text-align: center;
   font-size: 1rem;
+  color: #ecf7ff;
+  padding: 0.5rem 1rem;
+  margin: 1.2rem;
+  cursor: pointer;
 }
 
-/* Caption/1 */
-p .caption1 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 15px;
-  line-height: 18px;
-  /* identical to box height */
-  color: #000000;
+/* HERO SECTION */
+.hero-section {
+  padding-top: 3rem;
 }
-/* Caption/2 */
-
-p .caption2 {
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 13px;
-  line-height: 15px;
-  color: #000000;
+.hero-container {
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.hero-content {
+  max-width: 530px;
 }
 
-/* navigation */
+.hero-heading {
+  margin-bottom: 1.8rem;
+  line-height: 130%;
+}
+
+.hero-txt {
+  margin-bottom: 2.5rem;
+}
+.hero-btns {
+  display: block;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* HERO IMG */
+
+.hero-img1 {
+  position: absolute;
+  /* left: -19%;
+  top: 0%; */
+  /* right: auto;
+  bottom: auto; */
+  max-width: 375px;
+  z-index: 2;
+}
+.hero-main-img {
+  position: relative;
+  max-width: 100%;
+  vertical-align: middle;
+  display: inline-block;
+  z-index: 1;
+}
+.hero-img2 {
+  position: absolute;
+  /* left: auto;
+  top: auto;
+  right: -25%;
+  bottom: -22%; */
+  max-width: 375px;
+  z-index: 2;
+}
+
+/* CLIENTS LOGOS */
+
+.logo-section {
+  margin-top: 0px;
+  padding: 0px 30px;
+}
+
+.container-logos {
+  margin-top: 8.1rem;
+}
+.grid-logos {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+.client-logo {
+  display: flex;
+  width: 150px;
+  height: 96px;
+  max-height: 96px;
+  max-width: 150px;
+  -webkit-box-pack: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.testi-container {
+  background-color: #292e47;
+  height: 100%;
+}
+
+.cta-container {
+  height: 100%;
+  background-color: #ffc600;
+}

@@ -4,23 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- adapta contenido a la ventana de dispositivo -->
+    <meta name="MobileOptimized" content="width" />
     <meta name="description"
-        content="Mid-term-project responsive website. Ironhack bootcamp Feb 2022. HTML, CSS, JavaSript, Git and node.js" />
-    <meta name="author" content="Rocio Arjona" />
-    <meta name="keywords" content="Ironhack, bootcamp, mid-term-project" />
-    <meta name="robots" content="index" />
-    <title>Mid-Term Arjona</title>
-    <style src="/styles.css"></style>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-    </style>
+        content="Mid-term-project responsive website. Ironhack bootcamp Feb 2022. HTML, CSS, JavaSript, Git and node.js">
+    <meta name="author" content="Rocio Arjona">
+    <meta name="keywords" content="Ironhack, bootcamp, mid-term-project">
+    <meta name="robots" content="index">
+    <link href="../mid-term-project/css/styles.css" rel="stylesheet" type="text/css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- TO DO.... FAVICON <link rel="shortcut icon" href="/img/favicon.png"> -->
+    <noscript>
+        <p>The page you are viewing requires the use of JavaScript for its operation.
+            If you have intentionally disabled it, please re-enable it.</p>
+    </noscript>
+    <title>Arjona Mid-Term Project</title>
 </head>
 
 <body>
     <header>
+        <!-- HEADER -->
         <div class="top-menu">
-            <div class="logo-circle">
+            <!-- web logo -->
+            <img src="/resources/logos/circle.svg" alt="company logo" />
+            <!-- <div class="logo-circle">
                 <svg width="62" height="20" viewbox="0 0 62 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M14.9766 17.2773C14.1953 17.9492 13.3203 18.4648 12.3516 18.8242C11.3828 19.1836 10.3789 19.3633 9.33984 19.3633C8.54297 19.3633 7.77344 19.2578 7.03125 19.0469C6.29688 18.8438 5.60547 18.5547 4.95703 18.1797C4.31641 17.7969 3.73047 17.3398 3.19922 16.8086C2.66797 16.2773 2.21094 15.6914 1.82812 15.0508C1.45312 14.4023 1.16016 13.7109 0.949219 12.9766C0.746094 12.2344 0.644531 11.4648 0.644531 10.668C0.644531 9.87109 0.746094 9.10156 0.949219 8.35938C1.16016 7.61719 1.45312 6.92578 1.82812 6.28516C2.21094 5.63672 2.66797 5.04688 3.19922 4.51562C3.73047 3.98438 4.31641 3.53125 4.95703 3.15625C5.60547 2.77344 6.29688 2.48047 7.03125 2.27734C7.77344 2.06641 8.54297 1.96094 9.33984 1.96094C10.3789 1.96094 11.3828 2.14062 12.3516 2.5C13.3203 2.85156 14.1953 3.36719 14.9766 4.04688L13.1953 6.97656C12.7031 6.44531 12.1211 6.03906 11.4492 5.75781C10.7773 5.46875 10.0742 5.32422 9.33984 5.32422C8.59766 5.32422 7.90234 5.46484 7.25391 5.74609C6.60547 6.02734 6.03906 6.41016 5.55469 6.89453C5.07031 7.37109 4.6875 7.9375 4.40625 8.59375C4.125 9.24219 3.98438 9.93359 3.98438 10.668C3.98438 11.4023 4.125 12.0938 4.40625 12.7422C4.6875 13.3828 5.07031 13.9453 5.55469 14.4297C6.03906 14.9141 6.60547 15.2969 7.25391 15.5781C7.90234 15.8594 8.59766 16 9.33984 16C10.0742 16 10.7773 15.8594 11.4492 15.5781C12.1211 15.2891 12.7031 14.8789 13.1953 14.3477L14.9766 17.2773Z"
@@ -39,24 +49,125 @@
                         d="M55.1719 15.9297C55.2969 15.9688 55.4219 15.9961 55.5469 16.0117C55.6719 16.0195 55.7969 16.0234 55.9219 16.0234C56.2344 16.0234 56.5352 15.9805 56.8242 15.8945C57.1133 15.8086 57.3828 15.6875 57.6328 15.5312C57.8906 15.3672 58.1172 15.1719 58.3125 14.9453C58.5156 14.7109 58.6797 14.4531 58.8047 14.1719L61.1484 16.5273C60.8516 16.9492 60.5078 17.3281 60.1172 17.6641C59.7344 18 59.3164 18.2852 58.8633 18.5195C58.418 18.7539 57.9453 18.9297 57.4453 19.0469C56.9531 19.1719 56.4453 19.2344 55.9219 19.2344C55.0391 19.2344 54.207 19.0703 53.4258 18.7422C52.6523 18.4141 51.9727 17.957 51.3867 17.3711C50.8086 16.7852 50.3516 16.0898 50.0156 15.2852C49.6797 14.4727 49.5117 13.582 49.5117 12.6133C49.5117 11.6211 49.6797 10.7148 50.0156 9.89453C50.3516 9.07422 50.8086 8.375 51.3867 7.79688C51.9727 7.21875 52.6523 6.76953 53.4258 6.44922C54.207 6.12891 55.0391 5.96875 55.9219 5.96875C56.4453 5.96875 56.957 6.03125 57.457 6.15625C57.957 6.28125 58.4297 6.46094 58.875 6.69531C59.3281 6.92969 59.75 7.21875 60.1406 7.5625C60.5312 7.89844 60.875 8.27734 61.1719 8.69922L55.1719 15.9297ZM56.8125 9.33203C56.6641 9.27734 56.5156 9.24219 56.3672 9.22656C56.2266 9.21094 56.0781 9.20312 55.9219 9.20312C55.4844 9.20312 55.0703 9.28516 54.6797 9.44922C54.2969 9.60547 53.9609 9.83203 53.6719 10.1289C53.3906 10.4258 53.168 10.7852 53.0039 11.207C52.8398 11.6211 52.7578 12.0898 52.7578 12.6133C52.7578 12.7305 52.7617 12.8633 52.7695 13.0117C52.7852 13.1602 52.8047 13.3125 52.8281 13.4688C52.8594 13.6172 52.8945 13.7617 52.9336 13.9023C52.9727 14.043 53.0234 14.168 53.0859 14.2773L56.8125 9.33203Z"
                         fill="#072AC8" />
                 </svg>
-            </div>
+            </div> -->
+            <!-- NAV -->
             <div class="nav-bar">
-                <a href="#">Home</a>
-                <a href="#">Project</a>
-                <a href="#">Services</a>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Project</a></li>
+                    <li><a href="#">Services</a></li>
+                </ul>
             </div>
-            <button class="contact-btn">Contact Us</button>
+            <!--contact button-->
+            <button class="primary-btn">Contact Us</button>
         </div>
-
     </header>
     <main>
+        <!-- HERO SECTION -->
         <div class="hero">
             <h1>Empower Your Business With Stunning</h1>
+            <p>Circle is a digital design and development studio. We design and develop astonishing websites and mobile
+                apps.</p>
+            <img src="/resources/hero-section/card-1.png" alt="hero section photo 1" width="290" />
+            <img src="/resources/hero-section/hero-image.png" alt="hero section photo main" width="560" />
+            <img src="/resources/hero-section/card-2.png" alt="hero section photo 2" width="290" />
+            <button>See our work</button>
+            <button class"primary-btn">Get in touch</button>
         </div>
-        <div class="companies-logos"></div>
-
+        <!-- CLIENT LOGOS -->
+        <div class="container-logos">
+            <!-- grid -->
+            <div class="grid-logos">
+                <!-- flex -->
+                <div class="client-logo">
+                    <img src="/resources/logos/airbnb-logo.svg" alt="airbnb-logo logo" />
+                </div>
+                <div class="client-logo">
+                    <img src="/resources/logos/google-logo.svg" alt="google-logo logo" />
+                </div>
+                <div class="client-logo">
+                    <img src="/resources/logos/microsoft-logo.svg" alt="microsoft-logo logo" />
+                </div>
+                <div class="client-logo">
+                    <img src="/resources/logos/fedex-logo.svg" alt="fedex-logo logo" />
+                </div>
+                <div class="client-logo">
+                    <img src="/resources/logos/amazon-logo.svg" alt="amazon-logo logo" />
+                </div>
+            </div>
+        </div>
+        <!-- PROJECT SECTION -->
+        <div class="projects-container">
+            <h2 class="project-heading">Recent Projects</h2>
+            <div class="card-container">
+                <div class="card-collection">
+                    <div class="card-item">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img class="project-card-img" src="/resources/projects-img/1.jpg" alt="project-card-img"
+                                    width="340">
+                            </div>
+                            <div class="project-card-text">
+                                <div class="project-title">Simplify</div>
+                                <div class="project-description">UI Design & App development</div>
+                                <a href="" target="blank" class="project-link">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img class="project-card-img" src="/resources/projects-img/2.jpg" alt="project-card-img"
+                                    width="340">
+                            </div>
+                            <div class="project-card-text">
+                                <div class="project-title">Dashcoin</div>
+                                <div class="project-description">Web development</div>
+                                <a href="" target="blank" class="project-link">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-item">
+                        <div class="project-card">
+                            <div class="project-img">
+                                <img class="project-card-img" src="/resources/projects-img/3.jpg" alt="project-card-img"
+                                    width="340">
+                            </div>
+                            <div class="project-card-text">
+                                <div class="project-title">Vectorify</div>
+                                <div class="project-description">User Experience Design</div>
+                                <a href="" target="blank" class="project-link">Learn More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- TESTIMONIALS -->
+        <div class="testi-section">
+            <div class="testi-container">
+                <h3 class="testi-header">Hear What Our Clients Have To Say</h3>
+                <div class="testi-txt">
+                    <p>"Circle help us through every stage of our startup. We really enjoyed working with you."</p>
+                </div>
+                <div class="testi">
+                    <div class="testi-img"></div>
+                    <div class="testi-info">
+                        <div class="testi-name">Kristin Watson</div>
+                        <div class="testi-position">Booking.com</div>
+                    </div>
+                </div>
+            </div>
+            <div class="emoji-top-left"></div>
+            <div class="emoji-top-right"></div>
+            <div class="emoji-bottom-left"></div>
+            <div class="emoji-bottom-right"></div>
+        </div>
+        <!-- OUR SERVICES -->
+        <!-- CTA SECTION -->
 
     </main>
+    <!--FOOTER-->
     <footer></footer>
 
 </body>

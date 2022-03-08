@@ -16,6 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="" type="module" defer></script>
     <!-- TO DO.... FAVICON <link rel="shortcut icon" href="/img/favicon.png"> -->
     <noscript>
         <p>The page you are viewing requires the use of JavaScript for its operation. If you have intentionally disabled
@@ -33,6 +34,8 @@
                     <!-- web logo -->
                     <img src="/resources/logos/circle.svg" alt="company logo" />
                     <!-- NAV -->
+                    <img id="mostrar-menu" class="mostrar-menu" src="/resources/nav/icons8-menú.svg" width="24"
+                        height="24"></img>
                     <div class="nav-bar">
                         <a href="/index.html">Home</a>
                         <a href="/page.html">Project</a>
@@ -45,6 +48,16 @@
         </div>
         <!-- MAIN -->
         <main>
+            <!--Float menu-->
+            <div class="menu-nav">
+                <button id="cerrar-menu" class="cerrar-menu" aria-label="Cerrar">
+                </button>
+                <ul>
+                    <li><a href="javascript:location.reload()">Home</a></li>
+                    <li><a href="/contact.html">Projects</a></li>
+                    <li><a href="/home.html">Services</a></li>
+                </ul>
+            </div>
             <!-- HERO SECTION -->
             <div class="hero-section">
                 <div class="hero-container">
@@ -52,13 +65,14 @@
                         <h1 class="hero-heading">Empower Your Business With Stunning Desing!</h1>
                         <div class="hero-txt">
                             <p>Circle is a digital design and development studio. We design and develop astonishing
-                                websites <br> and
+                                websites and
                                 mobile
                                 apps.</p>
                         </div>
                         <div class="hero-btns">
-                            <button class="secondary-btn">See our work</button>
                             <button class="primary-btn">Get in touch</button>
+                            <button class="secondary-btn">See our work</button>
+
                         </div>
                     </div>
                     <div class="hero-imgs">
@@ -96,7 +110,7 @@
                 </div>
             </div>
             <!-- PROJECT SECTION -->
-            <div class="project-container">
+            <div class="project-section">
                 <h2 class="section-heading">Recent Projects</h2>
                 <div class="card-container">
                     <div class="card-collection">
@@ -176,55 +190,58 @@
             <div class="services-section">
                 <div class="services-container">
                     <h2 class="section-heading">Our Services</h2>
-                    <div class="card-collection">
-                        <div class="card-item">
-                            <div class="service-icon1">
-                                <img class="icons" src="/resources/service-resources/1.svg" alt="pencil icon" width="40"
-                                    height="40">
-                            </div>
-                            <div class="card-txt">
-                                <div class="title">User Interface Design</div>
-                                <div class="description">
-                                    <p>Circle provides you with a stunning user interface design that is accessible
-                                        to
-                                        everyone.
-                                    </p>
+                    <div class="card-container">
+                        <div class="card-collection">
+                            <div class="card-items">
+                                <div class="service-icon1">
+                                    <img class="icons" src="/resources/service-resources/1.svg" alt="pencil icon"
+                                        width="40" height="40">
                                 </div>
-                                <a href="#" class="link">Learn More</a>
-                            </div>
-                        </div>
-                        <div class="card-item">
-                            <div class="service-icon2">
-                                <img class="icons" src="/resources/service-resources/2.svg" alt="pencil icon" width="40"
-                                    height="40">
-                            </div>
-                            <div class="card-txt">
-                                <div class="title">User Experience Design</div>
-                                <div class="description">
-                                    <p>Circle always focuses on delivering the best user experience to your
-                                        customers.
-                                    </p>
+                                <div class="card-txt">
+                                    <div class="title">User Interface Design</div>
+                                    <div class="description">
+                                        <p>Circle provides you with a stunning user interface design that is accessible
+                                            to
+                                            everyone.
+                                        </p>
+                                    </div>
+                                    <a href="#" class="link">Learn More</a>
                                 </div>
-                                <a href="#" class="link">Learn More</a>
                             </div>
-                        </div>
-                        <div class="card-item">
-                            <div class="service-icon3">
-                                <img class="icons" src="/resources/service-resources/3.svg" alt="pencil icon" width="40"
-                                    height="40">
-                            </div>
-                            <div class="card-txt">
-                                <div class="title">Application Development</div>
-                                <div class="description">
-                                    <p>We develop high-quality mobile and web applications using the latest
-                                        technology
-                                        stack.
-                                    </p>
+                            <div class="card-items">
+                                <div class="service-icon2">
+                                    <img class="icons" src="/resources/service-resources/2.svg" alt="pencil icon"
+                                        width="40" height="40">
                                 </div>
-                                <a href="#" class="link">Learn More</a>
+                                <div class="card-txt">
+                                    <div class="title">User Experience Design</div>
+                                    <div class="description">
+                                        <p>Circle always focuses on delivering the best user experience to your
+                                            customers.
+                                        </p>
+                                    </div>
+                                    <a href="#" class="link">Learn More</a>
+                                </div>
+                            </div>
+                            <div class="card-items">
+                                <div class="service-icon3">
+                                    <img class="icons" src="/resources/service-resources/3.svg" alt="pencil icon"
+                                        width="40" height="40">
+                                </div>
+                                <div class="card-txt">
+                                    <div class="title">Application Development</div>
+                                    <div class="description">
+                                        <p>We develop high-quality mobile and web applications using the latest
+                                            technology
+                                            stack.
+                                        </p>
+                                    </div>
+                                    <a href="#" class="link">Learn More</a>
+                                </div>
                             </div>
                         </div>
                     </div>
+
                 </div>
 
             </div>
@@ -237,7 +254,7 @@
                     </div>
                     <form class="cta-form" id="email-form">
                         <div class="cta-txt-wrapper">
-                            <img class="form-icon" src="/resources/cta-resources/mail.svg" alt="email envelope logo"
+                            <img class="cta-form-icon" src="/resources/cta-resources/mail.svg" alt="email envelope logo"
                                 width="30" height="30" />
                             <input type="email" class="cta-txt-field" maxlength="256" name="email-2" data-name="Email 2"
                                 placeholder="Enter your email" id="email-2" required="">

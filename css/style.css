@@ -324,6 +324,13 @@ p {
 .section-heading {
   margin-bottom: 5rem;
 }
+
+.project-article-img {
+  width: 100%;
+  height: 14rem;
+  margin: 5rem;
+}
+
 .card-container {
   display: flex;
   -webkit-box-orient: vertical;
@@ -341,6 +348,10 @@ p {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto auto;
 }
+.project-card-img {
+  width: 100%;
+  height: 14rem;
+}
 .card-txt {
   display: flex;
   height: 100%;
@@ -354,15 +365,17 @@ p {
   margin: 2rem 1.8rem 1.2rem 1.8rem;
   font-size: 1.5rem;
   font-weight: 500;
-  line-height: 115%;
+  line-height: 130%;
+  text-align: left;
 }
 
 .description {
-  margin: 2rem 1.8rem 1.2rem 1.8rem;
+  margin: 0.1rem 1.8rem 1.2rem 1.8rem;
   color: #292e47;
   font-size: 1rem;
-  line-height: 0;
+  line-height: 120%;
   font-weight: 400;
+  text-align: left;
 }
 
 .link {
@@ -965,8 +978,14 @@ p {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
   background-color: #fff;
+  text-align: left;
+}
+.card-text p {
+  text-align: left;
+  margin: auto;
+  padging: auto;
 }
 
   /* TESTIMONIAL SECTION */

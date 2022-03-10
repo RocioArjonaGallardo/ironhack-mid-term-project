@@ -1,5 +1,3 @@
-console.log("JS connected");
-
 // FUNCION PARA INYECTAR CONTENIDO en la sección principal de PAGE.HTML
 function getContent() {
   // CAPTURAR DOM

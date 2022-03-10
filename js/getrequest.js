@@ -13,11 +13,11 @@ function getContent() {
   const articleLink = document.querySelector("#articleLink");
   // console.log(articleLink);
   const title = document.querySelector("#title");
-  console.log(title);
+  // console.log(title);
   const subtitle = document.querySelector("#subtitle");
-  console.log(subtitle);
+  // console.log(subtitle);
   const content = document.querySelector("#content");
-  console.log(content);
+  // console.log(content);
 
   //HACER FETCH del contenido desde local host
   fetch(
@@ -25,21 +25,23 @@ function getContent() {
   )
     .then((response) => response.json())
     .then((data) => {
-      console.log(data);
+      // console.log(data);
+
       //COSEGUIR CONTENIDO DESDE EL FETCH
-      const articleContent = data.articles[3].content;
+      const articleContent = data.articles[7].content;
       // console.log(articleContent);
-      const articleTitle = data.articles[3].title;
+      const articleTitle = data.articles[7].title;
       // console.log(articleTitle);
-      const articleSubtitle = data.articles[3].description;
+      const articleSubtitle = data.articles[7].description;
       // console.log(articleSubtitle);
-      const articleImg = data.articles[3].urlToImage;
+      const articleImg = data.articles[7].urlToImage;
       // console.log(articleImg);
-      const Link = data.articles[3].url;
+      const Link = data.articles[7].url;
       // console.log(Link);
+
       //PINTAR CONTENIDO EN HTML
-      articleLink.setAttribute("href", data.articles[3].url);
-      img.setAttribute("src", data.articles[3].urlToImage);
+      articleLink.setAttribute("href", data.articles[7].url);
+      img.setAttribute("src", data.articles[7].urlToImage);
       content.innerText = articleContent;
       title.innerHTML = articleTitle;
       subtitle.innerHTML = articleSubtitle;
@@ -51,7 +53,7 @@ getContent();
 //CONTENT FOR CARDS SECTION ----->
 
 const container = document.querySelector("#card-template");
-console.log(container);
+// console.log(container);
 
 const renderPosts = async () => {
   let uri =
@@ -59,7 +61,7 @@ const renderPosts = async () => {
   const res = await fetch(uri); //respuesta pura en javascript desde el endpoint
   // console.log(res);
   const posts = await res.json(); //transforma la respuesta javascript en un json legible
-  console.log(posts);
+  // console.log(posts);
   let template = "";
   posts.articles.forEach((post) => {
     template += ` 

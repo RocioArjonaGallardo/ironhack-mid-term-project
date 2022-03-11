@@ -2,6 +2,7 @@ console.log("getrequest, connected");
 //javascript for page.html
 //API NEWS
 //ENDPOINT: https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=48f8969fe5a44739ab2258762dd2681a
+//SECOND API KEY: 9b08f245fef74c0eb3ea8c37cf8ee07a
 
 // CONTENT FOR BLOG SECTION---->
 
@@ -21,7 +22,7 @@ function getContent() {
 
   //HACER FETCH del contenido desde local host
   fetch(
-    "https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=48f8969fe5a44739ab2258762dd2681a"
+    "https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=9b08f245fef74c0eb3ea8c37cf8ee07a"
   )
     .then((response) => response.json())
     .then((data) => {
@@ -57,7 +58,7 @@ const container = document.querySelector("#card-template");
 
 const renderPosts = async () => {
   let uri =
-    "https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=48f8969fe5a44739ab2258762dd2681a&pageSize=3"; //guardamos en endpoint en una constante para reusarla facilmente
+    "https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=9b08f245fef74c0eb3ea8c37cf8ee07a&pageSize=3"; //guardamos en endpoint en una constante para reusarla facilmente
   const res = await fetch(uri); //respuesta pura en javascript desde el endpoint
   // console.log(res);
   const posts = await res.json(); //transforma la respuesta javascript en un json legible

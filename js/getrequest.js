@@ -61,7 +61,7 @@ const renderPosts = async () => {
   const res = await fetch(uri); //respuesta pura en javascript desde el endpoint
   // console.log(res);
   const posts = await res.json(); //transforma la respuesta javascript en un json legible
-  // console.log(posts);
+  console.log(posts);
   let template = "";
   posts.articles.forEach((post) => {
     template += ` 
@@ -69,7 +69,7 @@ const renderPosts = async () => {
     <img class="news-card-img" src="${post.urlToImage}" />
     <div class="news-card-txt">
     <p class="news-title">${post.title}</p>
-    <p class="news-description">${post.description}</p>
+    <p class="news-description">${post.source.name}</p>
     <a href="${post.url}" target="blank" class="news-link">More...</a>
     </div>
     </div>

@@ -4,7 +4,19 @@ console.log("getrequest, connected");
 //ENDPOINT: https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=48f8969fe5a44739ab2258762dd2681a
 //SECOND API KEY: 9b08f245fef74c0eb3ea8c37cf8ee07a
 
-// CONTENT FOR BLOG SECTION---->
+//// THE NEWS API : NO CORS PROBLEMS
+//// ENDPOINT: https://api.thenewsapi.com/v1/news/top?api_token=cYTbzahPiBtwYZrTpD5T0ugZjhQjd3NfncTLC1ub&language=en&limit=4&categories=science
+
+// CORS ---->
+// function fetchCors() {
+//   fetch(
+//     "https://blooming-depths-86619.herokuapp.com/https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=48f8969fe5a44739ab2258762dd2681a"
+//   )
+//     .then((response) => response.json())
+//     .then((data) => console.log(data))
+//     .catch((err) => console.log(err));
+// }
+// fetchCors();
 
 // CONTENT FOR BLOG SECTION---->
 function getContent() {
@@ -22,27 +34,27 @@ function getContent() {
 
   //HACER FETCH del contenido desde local host
   fetch(
-    "https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=9b08f245fef74c0eb3ea8c37cf8ee07a"
+    "https://api.thenewsapi.com/v1/news/top?api_token=cYTbzahPiBtwYZrTpD5T0ugZjhQjd3NfncTLC1ub&language=en&limit=4&categories=science"
   )
     .then((response) => response.json())
-    .then((data) => {
+    .then((post) => {
       // console.log(data);
 
       //COSEGUIR CONTENIDO DESDE EL FETCH
-      const articleContent = data.articles[7].content;
+      const articleContent = post.data[3].snippet;
       // console.log(articleContent);
-      const articleTitle = data.articles[7].title;
+      const articleTitle = post.data[3].title;
       // console.log(articleTitle);
-      const articleSubtitle = data.articles[7].description;
+      const articleSubtitle = post.data[3].description;
       // console.log(articleSubtitle);
-      const articleImg = data.articles[7].urlToImage;
+      const articleImg = post.data[3].image_url;
       // console.log(articleImg);
-      const Link = data.articles[7].url;
+      const Link = post.data[3].url;
       // console.log(Link);
 
       //PINTAR CONTENIDO EN HTML
-      articleLink.setAttribute("href", data.articles[7].url);
-      img.setAttribute("src", data.articles[7].urlToImage);
+      articleLink.setAttribute("href", post.data[3].url);
+      img.setAttribute("src", post.data[3].image_url);
       content.innerText = articleContent;
       title.innerHTML = articleTitle;
       subtitle.innerHTML = articleSubtitle;
@@ -52,27 +64,26 @@ function getContent() {
 getContent();
 
 //CONTENT FOR CARDS SECTION ----->
-
 const container = document.querySelector("#card-template");
 // console.log(container);
 
 const renderPosts = async () => {
   let uri =
-    "https://newsapi.org/v2/top-headlines?category=science&language=en&apiKey=9b08f245fef74c0eb3ea8c37cf8ee07a&pageSize=3"; //guardamos en endpoint en una constante para reusarla facilmente
+    "https://api.thenewsapi.com/v1/news/top?api_token=cYTbzahPiBtwYZrTpD5T0ugZjhQjd3NfncTLC1ub&language=en&limit=4&categories=science"; //guardamos en endpoint en una constante para reusarla facilmente
   const res = await fetch(uri); //respuesta pura en javascript desde el endpoint
   // console.log(res);
   const posts = await res.json(); //transforma la respuesta javascript en un json legible
   console.log(posts);
   let template = "";
-  const dates = posts.articles;
+  const dates = posts.data;
   console.log(dates);
   dates.forEach((post) => {
     template += ` 
     <div class="news-card">
-    <img class="news-card-img" src="${post.urlToImage}" />
+    <img class="news-card-img" src="${post.image_url}" />
     <div class="news-card-txt">
     <p class="news-title">${post.title}</p>
-    <p class="news-description">${post.source.name}</p>
+    <p class="news-description">${post.source}</p>
     <a href="${post.url}" target="blank" class="news-link">More...</a>
     </div>
     </div>

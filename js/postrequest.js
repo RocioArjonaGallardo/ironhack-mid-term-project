@@ -14,7 +14,7 @@ const createPost = async (e) => {
     message: form.message.value,
   };
   console.log(doc);
-  await fetch("http://localhost:3000/messages", {
+  await fetch("http://localhost:3000/pwmessages", {
     method: "POST",
     body: JSON.stringify(doc),
     headers: { "Content-Type": "application/json" },

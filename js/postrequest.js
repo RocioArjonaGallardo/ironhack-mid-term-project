@@ -6,6 +6,7 @@ const form = document.querySelector("form");
 
 const createPost = async (e) => {
   e.preventDefault();
+  console.log("probando");
   const doc = {
     fullname: form.fname.value,
     email: form.email.value,
@@ -13,10 +14,10 @@ const createPost = async (e) => {
     message: form.message.value,
   };
   console.log(doc);
-  await fetch("http://localhost:8000/posts", {
+  await fetch("http://localhost:3000/messages", {
     method: "POST",
     body: JSON.stringify(doc),
-    headers: { "Content-Type": "application/jason" },
+    headers: { "Content-Type": "application/json" },
   });
 
   // window.location.replace('');

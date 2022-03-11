@@ -64,7 +64,9 @@ const renderPosts = async () => {
   const posts = await res.json(); //transforma la respuesta javascript en un json legible
   console.log(posts);
   let template = "";
-  posts.articles.forEach((post) => {
+  const dates = posts.articles;
+  console.log(dates);
+  dates.forEach((post) => {
     template += ` 
     <div class="news-card">
     <img class="news-card-img" src="${post.urlToImage}" />
